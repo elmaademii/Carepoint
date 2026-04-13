@@ -96,7 +96,7 @@
 
 .hero-cards {
     position: absolute;
-    top: 80%;               /* pozicion perfekt i kartave */
+    top: 80%;              
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -146,9 +146,10 @@
 
 
 
-/* =======================================
-   RESPONSIVE DESIGN
-======================================= */
+
+   /*RESPONSIVE DESIGN8
+   
+
 
 /* Laptop & Tablet landscape */
 @media (max-width: 992px) {
@@ -213,8 +214,4 @@
         width: 100%;
         text-align: center;
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 2023fa616fc55d11bdef9822350e1d83d4d6c84e
