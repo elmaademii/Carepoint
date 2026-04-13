@@ -1,4 +1,7 @@
-<?php require 'includes/header.php'; ?>
+<?php 
+$page_css = "kontakt.css";
+require 'includes/header.php'; 
+?>
 <?php require 'includes/navbar.php'; ?>
 
 <main>
@@ -142,7 +145,15 @@
   </section>
 
 </main>
-<script src="kontakt.js"></script>
-<
+<!-- COOKIE BANNER --> <div id="cookie-banner" class="cookie-banner" hidden> 
+  <div class="cookie-banner__content"> <p class="cookie-banner__text"> CarePoint përdor cookies për të përmirësuar funksionalitetin e faqes dhe për të analizuar përdorimin e saj. Duke klikuar “Prano”, ju pajtoheni me përdorimin e cookies. </p> 
+  <div class="cookie-banner__actions"> <button id="cookie-accept" class="cookie-btn cookie-btn--primary" type="button"> Prano </button> 
+  <button id="cookie-dismiss" class="cookie-btn cookie-btn--secondary" type="button"> Refuzo </button>
+ </div> 
+</div>
+</div> 
+ <script src="kontakt.js"></script>
+  <script src="cookies.js"></script> </body> </html> 
+
 
 <?php require 'includes/footer.php'; ?>

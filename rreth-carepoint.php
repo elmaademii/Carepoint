@@ -1,45 +1,5 @@
-<!DOCTYPE html>
-<html lang="sq">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rreth CarePoint - Spitali ynë</title>
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" 
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="rreth-carepoint.css">
-</head>
-<body>
-    <!-- TOP BAR -->
-    <div class="top-bar">
-        <div class="container top-bar-content">
-            <div class="top-left">
-                <span><i class="fa-solid fa-phone"></i> +383 (0) 49 513 513</span>
-                <span><i class="fa-solid fa-envelope"></i> info@carepoint.com</span>
-            </div>
-            <div class="top-right">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            </div>
-        </div>
-    </div>
-
-    <!-- HEADER -->
-    <header class="main-header">
-        <div class="container header-content">
-            <div class="logo">CarePoint</div>
-            <nav class="main-nav">
-                <a href="ballina.html">Ballina</a>
-                <a href="rreth-carepoint.html" class="active">Rreth CarePoint</a>
-                <a href="services.html">Shërbimet</a>
-                <a href="stafi.html">Stafi mjekësor</a>
-                <a href="kontakt.html">Kontakt</a>
-            </nav>
-        </div>
-    </header>
+<?php require 'includes/header.php'; ?>
+<?php require 'includes/navbar.php'; ?>
 
     <!-- HERO SEKSION PËR ABOUT US -->
     <section class="hero-about">
@@ -427,11 +387,9 @@
         </div>
     </section>
    
-    <!-- FOOTER -->
    
-      <footer class="site-footer">
-        <p>&copy; 2025 CarePoint. Të gjitha të drejtat e rezervuara.</p>
-    </footer>
+   
+     <?php require 'includes/footer.php'; ?>
     
     <!-- COOKIE BANNER -->
 <div id="cookie-banner" class="cookie-banner" hidden>
