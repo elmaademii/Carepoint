@@ -144,12 +144,8 @@
         </section>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-        <div class="container footer-content">
-            <p>&copy; 2025 CarePoint. Të gjitha të drejtat e rezervuara.</p>
-        </div>
-    </footer>
+     <?php require 'includes/footer.php'; ?>
+     
     <!-- COOKIE BANNER -->
 <div id="cookie-banner" class="cookie-banner" hidden>
   <div class="cookie-banner__content">
