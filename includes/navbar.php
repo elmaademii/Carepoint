@@ -18,10 +18,10 @@
 
         <nav class="main-nav">
             <a href="ballina.php" class="active">Ballina</a>
-            <a href="about.php">Rreth CarePoint</a>
+            <a href="rreth-carepoint.php"> Rreth CarePoint</a>
             <a href="services.php">Shërbimet</a>
-            <a href="staff.php">Stafi</a>
-            <a href="kontact.php">Kontakt</a>
+            <a href="stafi.php">Stafi</a>
+            <a href="kontakt.php">Kontakt</a>
         </nav>
     </div>
 </header>
