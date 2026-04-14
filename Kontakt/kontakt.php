@@ -57,13 +57,24 @@ require __DIR__ . '/../includes/header.php';
   <section class="form-section fade-in" id="kontakt-forma">
     <div class="form-card">
 
+      <!-- ✅ ALERT -->
+      <?php
+      if (isset($_GET['success'])) {
+          echo "<div class='alert success'>Mesazhi u dërgua me sukses!</div>";
+      }
+
+      if (isset($_GET['error'])) {
+          echo "<div class='alert error'>" . $_GET['error'] . "</div>";
+      }
+      ?>
+
       <div class="section-header">
         <h2>Na dërgoni mesazh</h2>
         <p>Plotësoni formën dhe ju kontaktojmë sa më shpejt.</p>
       </div>
 
-      <!-- ✅ FORM AJAX -->
-      <form id="contact-form" class="cp-form">
+      <!-- FORM  -->
+      <form method="POST" action="actions/validate_contact.php" class="cp-form">
 
         <div class="cp-row">
           <div class="cp-field">
@@ -81,7 +92,7 @@ require __DIR__ . '/../includes/header.php';
                 <img src="../img/kosovo-flag.png" alt="KS">
                 <span>+383</span>
               </div>
-              <input type="tel" name="phone" placeholder="+38344123456" required>
+              <input type="tel" name="phone" placeholder="44123456" required>
             </div>
           </div>
 
@@ -112,9 +123,6 @@ require __DIR__ . '/../includes/header.php';
         </div>
 
         <button type="submit" class="cp-submit">Dërgo mesazhin</button>
-
-        <!-- ✅ ALERT DEL KËTU -->
-        <p id="form-message"></p>
 
       </form>
 

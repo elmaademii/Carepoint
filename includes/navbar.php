@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/auth.php';
+$currentPage = basename($_SERVER["PHP_SELF"]);
 ?>
 
 <div class="top-bar">
