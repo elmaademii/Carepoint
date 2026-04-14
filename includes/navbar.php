@@ -1,3 +1,7 @@
+<?php
+require_once __DIR__ . '/auth.php';
+?>
+
 <div class="top-bar">
     <div class="container top-bar-content">
         <div class="top-left">
@@ -18,11 +22,16 @@
 
         <nav class="main-nav">
             <a href="ballina.php" class="active">Ballina</a>
-            <a href="rreth-carepoint.php"> Rreth CarePoint</a>
+            <a href="rreth-carepoint.php">Rreth CarePoint</a>
             <a href="services.php">Shërbimet</a>
             <a href="stafi.php">Stafi</a>
             <a href="kontakt.php">Kontakt</a>
-            <a href="login.php">Login</a>
+
+            <?php if (isLoggedIn()): ?>
+                <a href="logout.php">Shkyçu</a>
+            <?php else: ?>
+                <a href="login.php">Kyçu</a>
+            <?php endif; ?>
         </nav>
     </div>
 </header>

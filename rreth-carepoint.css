@@ -526,3 +526,12 @@
         padding: 1.5rem;
     }
 }
+.waiting-section {
+    padding: 4rem 0 1rem;
+    background: #ffffff;
+}
+
+#waiting-time-place {
+    max-width: 1100px;
+    margin: 0 auto;
+}

@@ -14,17 +14,17 @@ $user = currentUser();
     <section class="dashboard-hero">
         <div class="container dashboard-content">
             <div class="dashboard-welcome">
-                <span class="dashboard-label">Admin Panel</span>
+                <span class="dashboard-label">Paneli i administratorit</span>
                 <h1>Mirë se erdhe në CarePoint, Admin</h1>
 
-                <a href="logout.php" class="logout-btn">Dil nga llogaria</a>
+                <a href="logout.php" class="logout-btn">Shkyçu</a>
             </div>
 
             <div class="dashboard-card">
                 <h2>Informata të përdoruesit</h2>
 
                 <div class="info-row">
-                    <span>Username</span>
+                    <span>Emri i përdoruesit</span>
                     <strong><?php echo htmlspecialchars($user["username"]); ?></strong>
                 </div>
 

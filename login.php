@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit;
     }
 
-    $error = "Username ose password është gabim për rolin e zgjedhur.";
+    $error = "Emri i përdoruesit ose fjalëkalimi është gabim.";
 }
 ?>
 
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <section class="role-section">
             <div class="container">
                 <div class="role-header">
-                    <span class="login-label">CarePoint Access</span>
+                    <span class="login-label">Qasje në CarePoint</span>
                     <h1>Zgjidh mënyrën e kyçjes</h1>
                     <p>
                         Zgjidh rolin përkatës për të vazhduar në hapësirën tënde në sistemin CarePoint.
@@ -51,13 +51,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <div class="role-cards">
                     <a href="login.php?role=patient" class="role-card">
                         <i class="fa-solid fa-user"></i>
-                        <h2>Login as Patient</h2>
+                        <h2>Kyçu si pacient</h2>
                         <p>Kyçu si pacient për të vazhduar në hapësirën e përdoruesit.</p>
                     </a>
 
                     <a href="login.php?role=admin" class="role-card">
                         <i class="fa-solid fa-user-shield"></i>
-                        <h2>Login as Admin</h2>
+                        <h2>Kyçu si administrator</h2>
                         <p>Kyçu si administrator për të menaxhuar pjesën e mbrojtur të sistemit.</p>
                     </a>
                 </div>
@@ -69,12 +69,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <section class="login-hero">
             <div class="container login-hero-content">
                 <div class="login-copy">
-                    <span class="login-label">CarePoint Access</span>
+                    <span class="login-label">Qasje në CarePoint</span>
 
                     <?php if ($selectedRole === "admin"): ?>
                         <h1>Kyçu si administrator</h1>
                         <p>
-                            Përdor llogarinë e administratorit për të hyrë në dashboard dhe për të menaxhuar sistemin.
+                            Përdor llogarinë e administratorit për të hyrë në sistem dhe për të menaxhuar sistemin.
                         </p>
                     <?php else: ?>
                         <h1>Kyçu si pacient</h1>
@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 </div>
 
                 <div class="login-card">
-                    <h2>Login</h2>
+                    <h2>Kyçu</h2>
                     <p class="login-card-text">Shkruaj të dhënat për të vazhduar.</p>
 
                     <?php if ($error): ?>
@@ -96,12 +96,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <input type="hidden" name="role" value="<?php echo htmlspecialchars($selectedRole); ?>">
 
                         <div class="login-field">
-                            <label for="username">Username</label>
+                            <label for="username">Emri i përdoruesit</label>
                             <input type="text" id="username" name="username" placeholder="Shëno emrin e përdoruesit" required>
                         </div>
 
                         <div class="login-field">
-                            <label for="password">Password</label>
+                            <label for="password">Fjalëkalimi</label>
                             <input type="password" id="password" name="password" placeholder="Shëno fjalëkalimin" required>
                         </div>
 
