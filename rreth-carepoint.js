@@ -5,8 +5,8 @@ $(document).ready(function () {
      Estimator i kohës së pritjes (Location)
      ===================================================== */
   (function waitingTimeEstimator() {
-    const $section = $(".location-section");
-    if ($section.length === 0) return;
+    const $section = $("#waiting-time-place");
+if ($section.length === 0) return;
 
     const now = new Date();
     const hour = now.getHours();
@@ -35,9 +35,8 @@ $(document).ready(function () {
       </div>
     `);
 
-    const $title = $section.find(".section-title").first();
-    $title.after(panel);
-    panel.slideDown(300);
+$section.append(panel);
+panel.slideDown(300);
 
     // Animacion numerik
     $({ a: 0, b: 0 }).animate(
