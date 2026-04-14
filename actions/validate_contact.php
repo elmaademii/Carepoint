@@ -25,10 +25,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Telefoni
-    if (!preg_match("/^\+383[0-9]{8}$/", $phone)) {
-        echo "Numri duhet të jetë në format +383XXXXXXXX";
-        exit;
-    }
+    if (!preg_match("/^[0-9]{8}$/", $phone)) {
+    echo "Numri duhet të ketë 8 shifra!";
+    exit;
+}
+
+$phone = "+383" . $phone;
 
     // Mesazhi
     if (mb_strlen($message) < 5) {
@@ -39,5 +41,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // -------------------------
     // SUKSESI
     // -------------------------
-    echo "Forma u dërgua me sukses!";
+    echo "Mesazhi u dërgua me sukses!";
 }

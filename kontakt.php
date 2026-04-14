@@ -62,7 +62,7 @@ require 'includes/header.php';
         <p>Plotësoni formën dhe ju kontaktojmë sa më shpejt.</p>
       </div>
 
-      <!-- ✅ FORM AJAX -->
+      <!--  FORM AJAX -->
       <form id="contact-form" class="cp-form">
 
         <div class="cp-row">
@@ -81,7 +81,7 @@ require 'includes/header.php';
                 <img src="img/kosovo-flag.png" alt="KS">
                 <span>+383</span>
               </div>
-              <input type="tel" name="phone" placeholder="+38344123456" required>
+              <input type="tel" name="phone" placeholder="44123456" required>
             </div>
           </div>
 
@@ -113,7 +113,7 @@ require 'includes/header.php';
 
         <button type="submit" class="cp-submit">Dërgo mesazhin</button>
 
-        <!-- ✅ ALERT DEL KËTU -->
+        
         <p id="form-message"></p>
 
       </form>
