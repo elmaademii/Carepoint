@@ -1,42 +1,43 @@
 <?php
 
-// Kontrollon nëse forma është dërguar me POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // Marrja e të dhënave nga forma
-    $name = $_POST['name'] ?? '';
-    $email = $_POST['email'] ?? '';
-    $phone = $_POST['phone'] ?? '';
-    $message = $_POST['message'] ?? '';
+    // Marrja dhe pastrimi i të dhënave
+    $name = trim($_POST['name'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $phone = trim($_POST['phone'] ?? '');
+    $message = trim($_POST['message'] ?? '');
 
     // -------------------------
-    // VALIDIMI ME REGEX
+    // VALIDIMI
     // -------------------------
 
-    // Validimi i emrit (vetëm shkronja dhe hapësira)
+    // Emri
     if (!preg_match("/^[a-zA-Z ]+$/", $name)) {
         echo "Emri nuk është valid!";
         exit;
     }
 
-    // Validimi i email-it
+    // Email
     if (!preg_match("/^[\w\.-]+@[\w\.-]+\.[a-zA-Z]{2,}$/", $email)) {
         echo "Email nuk është valid!";
         exit;
     }
 
-    // Validimi i telefonit (format +383XXXXXXXX)
+    // Telefoni
     if (!preg_match("/^\+383[0-9]{8}$/", $phone)) {
         echo "Numri duhet të jetë në format +383XXXXXXXX";
         exit;
     }
 
-    // Validimi i mesazhit (min 5 karaktere)
-    if (strlen($message) < 5) {
+    // Mesazhi
+    if (mb_strlen($message) < 5) {
         echo "Mesazhi është shumë i shkurtër!";
         exit;
     }
 
-    // Nëse gjithçka është OK
+    // -------------------------
+    // SUKSESI
+    // -------------------------
     echo "Forma u dërgua me sukses!";
 }

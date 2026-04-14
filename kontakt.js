@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // SCROLL I BUTË NGA "SHIKO MË POSHTË"
+
+    // SCROLL
     const scrollLink = document.querySelector(".scroll-link");
 
     if (scrollLink) {
@@ -16,28 +17,25 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // ANIMACIONET FADE-IN
+    // FADE-IN
     const fadeElements = document.querySelectorAll(".fade-in");
 
     if ("IntersectionObserver" in window) {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("in-view");
-                        observer.unobserve(entry.target);
-                    }
-                });
-            },
-            { threshold: 0.2 }
-        );
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("in-view");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
 
         fadeElements.forEach((el) => observer.observe(el));
     } else {
         fadeElements.forEach((el) => el.classList.add("in-view"));
     }
 
-    // VALIDIMI I FORMËS
+    // 🔥 AJAX FORM (KJO PJESË ËSHTË E RE)
     const form = document.getElementById("contact-form");
     const messageBox = document.getElementById("form-message");
 
@@ -45,36 +43,34 @@ document.addEventListener("DOMContentLoaded", function () {
         form.addEventListener("submit", function (e) {
             e.preventDefault();
 
-            const name = form.name.value.trim();
-            const email = form.email.value.trim();
-            const phone = form.phone.value.trim();
-            const message = form.message.value.trim();
+            let formData = new FormData(form);
 
-            messageBox.textContent = "";
-            messageBox.classList.remove("error", "success");
+            fetch("actions/validate_contact.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(res => res.text())
+            .then(data => {
 
-            if (!name || !email || !phone || !message) {
-                messageBox.textContent = "Ju lutem plotësoni fushat e detyrueshme.";
-                messageBox.classList.add("error");
-                return;
-            }
+                messageBox.textContent = data;
+                messageBox.className = "alert";
 
-            const emailRegex = /\S+@\S+\.\S+/;
-            if (!emailRegex.test(email)) {
-                messageBox.textContent = "Ju lutem shkruani një adresë të vlefshme emaili.";
-                messageBox.classList.add("error");
-                return;
-            }
+                if (data.toLowerCase().includes("sukses")) {
+                    messageBox.classList.add("success");
+                    form.reset();
+                } else {
+                    messageBox.classList.add("error");
+                }
 
-            messageBox.textContent =
-                "Faleminderit për mesazhin. Ekipi i CarePoint do t’ju kontaktojë së shpejti.";
-            messageBox.classList.add("success");
-
-            form.reset();
+            })
+            .catch(() => {
+                messageBox.textContent = "Gabim në server!";
+                messageBox.className = "alert error";
+            });
         });
     }
 
-    // OVERLAY I HARTËS – LARGOJE KUR PREKET
+    // MAP
     const mapHint = document.getElementById("map-hint");
 
     function hideMapHint() {
@@ -83,17 +79,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (mapHint) {
-        // hiqet kur klikon
         mapHint.addEventListener("click", hideMapHint);
-
-        // hiqet edhe në scroll mbi overlay
-        mapHint.addEventListener(
-            "wheel",
-            () => {
-                hideMapHint();
-            },
-            { passive: true }
-        );
+        mapHint.addEventListener("wheel", hideMapHint, { passive: true });
     }
+
 });
 
