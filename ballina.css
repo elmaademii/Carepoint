@@ -19,11 +19,11 @@
 /* përmbajtja brenda hero */
 .hero-content {
     width: 100%;
-    padding: 3rem 1rem;
+    padding: 4rem 1rem;
     display: flex;
     flex-direction: column;
     position: relative;
-    pointer-events: none; /* kartat s’e pengojnë klikimin në tekst */
+    pointer-events: none;
 }
 
 /* =================================
@@ -54,7 +54,7 @@
 .hero-buttons {
     display: flex;
     gap: 1rem;
-    margin-bottom: 6rem;
+    margin-bottom: 0;
     pointer-events: auto;
 }
 
@@ -95,13 +95,11 @@
 ================================= */
 
 .hero-cards {
-    position: absolute;
-    top: 80%;              
-    left: 50%;
-    transform: translateX(-50%);
     display: flex;
     gap: 2rem;
     pointer-events: auto;
+    margin-top: 2.5rem;
+    justify-content: center;
 }
 
 /* një kartë */
