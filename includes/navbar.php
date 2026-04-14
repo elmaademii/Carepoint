@@ -21,18 +21,18 @@ $currentPage = basename($_SERVER["PHP_SELF"]);
     <div class="container header-content">
         <div class="logo">CarePoint</div>
 
-    <nav class="main-nav">
-    <a href="ballina.php" class="<?php echo $currentPage === 'ballina.php' ? 'active' : ''; ?>">Ballina</a>
-    <a href="rreth-carepoint.php" class="<?php echo $currentPage === 'rreth-carepoint.php' ? 'active' : ''; ?>">Rreth CarePoint</a>
-    <a href="services.php" class="<?php echo $currentPage === 'services.php' ? 'active' : ''; ?>">Shërbimet</a>
-    <a href="stafi.php" class="<?php echo $currentPage === 'stafi.php' ? 'active' : ''; ?>">Stafi</a>
-    <a href="kontakt.php" class="<?php echo $currentPage === 'kontakt.php' ? 'active' : ''; ?>">Kontakt</a>
+        <nav class="main-nav">
+            <a href="../Ballina/ballina.php" class="active">Ballina</a>
+            <a href="../Rreth-CarePoint/rreth-carepoint.php">Rreth CarePoint</a>
+            <a href="../Sherbimet/services.php">Shërbimet</a>
+            <a href="../Stafi/stafi.php">Stafi</a>
+            <a href="../Kontakt/kontakt.php">Kontakt</a>
 
-    <?php if (isLoggedIn()): ?>
-        <a href="logout.php">Shkyçu</a>
-    <?php else: ?>
-        <a href="login.php" class="<?php echo $currentPage === 'login.php' ? 'active' : ''; ?>">Kyçu</a>
-    <?php endif; ?>
-    </nav>
-  </div>
+            <?php if (isLoggedIn()): ?>
+                <a href="../Login-Logout/logout.php">Shkyçu</a>
+            <?php else: ?>
+                <a href="../Login-Logout/login.php">Kyçu</a>
+            <?php endif; ?>
+        </nav>
+    </div>
 </header>

@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pediatri - CarePoint</title>
+    <title>Kardiologji - CarePoint</title>
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="services.css">
+    <link rel="stylesheet" href="../services.css">
 </head>
 <body>
 
+    <!-- TOP BAR & HEADER -->
     <div class="top-bar">
         <div class="container top-bar-content">
             <div class="top-left">
@@ -29,67 +30,72 @@
         <div class="container header-content">
             <div class="logo">CarePoint</div>
             <nav class="main-nav">
-                <a href="ballina.html">Ballina</a>
-                <a href="rreth-carepoint.html">Rreth CarePoint</a>
-                <a href="services.html" class="active">Shërbimet</a>
-                <a href="stafi.html">Stafi mjekësor</a>
-                <a href="kontakt.html">Kontakt</a>
+                <a href="../Ballina/ballina.php">Ballina</a>
+                <a href="../Rreth-CarePoint/rreth-carepoint.php">Rreth CarePoint</a>
+                <a href="../Sherbimet/services.php" class="active">Shërbimet</a>
+                <a href="../Stafi/stafi.php">Stafi mjekësor</a>
+                <a href="../Kontakt/kontakt.php">Kontakt</a>
             </nav>
         </div>
     </header>
 
+    <!-- HERO -->
     <section class="hero hero-services">
         <div class="container">
-            <h1>Pediatri</h1>
-            <p>Kujdes i veçantë për shëndetin e fëmijëve nga lindja deri në adoleshencë.</p>
+            <h1>Kardiologji</h1>
+            <p>Diagnostikim dhe trajtim i sëmundjeve të zemrës me aparaturë moderne dhe staf të specializuar.</p>
 
             <div class="breadcrumb">
-                <a href="ballina.html">Ballina</a>
+                <a href="../Ballina/ballina.php">Ballina</a>
                 <span>&gt;</span>
-                <a href="services.html">Shërbimet Mjekësore</a>
+                <a href="../Sherbimet/services.php">Shërbimet Mjekësore</a>
                 <span>&gt;</span>
-                <span>Pediatri</span>
+                <span>Kardiologji</span>
             </div>
         </div>
     </section>
 
+    <!-- PËRMBAJTJA -->
     <main class="container service-detail">
         <div class="service-detail-content">
             <div class="service-detail-text">
-                <h2>Rreth shërbimit të pediatrisë</h2>
+                <h2>Rreth shërbimit të kardiologjisë</h2>
                 <p>
-                    Pediatria në CarePoint ofron kontrolle të rregullta, ndjekje të zhvillimit të fëmijës,
-                    vaksinime dhe trajtim të sëmundjeve akute dhe kronike pediatrike.
+                    Në repartin e kardiologjisë në CarePoint ofrojmë kujdes të specializuar për pacientët
+                    me sëmundje të zemrës dhe enëve të gjakut. Qasja jonë kombinon aparaturën moderne
+                    diagnostikuese me përvojën e mjekëve specialistë.
                 </p>
 
                 <h3>Shërbimet kryesore</h3>
                 <ul>
-                    <li>Kontrolle rutinë pediatrike</li>
-                    <li>Vaksinime sipas kalendarit kombëtar</li>
-                    <li>Trajtim i infeksioneve respiratore dhe gastrointestinale</li>
-                    <li>Këshillim për ushqyerje dhe rritje</li>
-                    <li>Mbikëqyrje e zhvillimit psikomotor</li>
+                    <li>Elektrokardiogram (EKG)</li>
+                    <li>Ekokardiografi</li>
+                    <li>Test i sforcimit (treadmill)</li>
+                    <li>Monitorim Holter 24-orësh</li>
+                    <li>Këshillim për parandalimin e sëmundjeve kardiovaskulare</li>
                 </ul>
 
                 <h3>Për kë rekomandohet?</h3>
                 <p>
-                    Çdo fëmijë ka nevojë për kontrolle periodike shëndetësore, sidomos në vitet e para
-                    të jetës, për të siguruar rritje dhe zhvillim të shëndetshëm.
+                    Pacientët me dhimbje gjoksi, lodhje të shpejtë, vështirësi në frymëmarrje,
+                    rrahje të çrregullta të zemrës ose histori familjare të sëmundjeve të zemrës
+                    rekomandohet të bëjnë kontroll kardiologjik.
                 </p>
             </div>
 
             <div class="service-detail-image">
-                <img src="img/pediatri.jpg" alt="Pediatri">
+                <img src="../img/kardiologji.jpg" alt="Kardiologji">
             </div>
         </div>
     </main>
 
+    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="container footer-content">
             <p>&copy; 2025 CarePoint. Të gjitha të drejtat e rezervuara.</p>
         </div>
     </footer>
-<!-- COOKIE BANNER -->
+    <!-- COOKIE BANNER -->
 <div id="cookie-banner" class="cookie-banner" hidden>
   <div class="cookie-banner__content">
     <p class="cookie-banner__text">
@@ -107,6 +113,7 @@
     </div>
   </div>
 </div>
-<script src ="cookies.js"></script>
+<script src ="../cookies.js"></script>
+
 </body>
 </html>

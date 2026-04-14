@@ -1,8 +1,8 @@
 <?php 
 $page_css = "kontakt.css";
-require 'includes/header.php'; 
+require __DIR__ . '/../includes/header.php';
 ?>
-<?php require 'includes/navbar.php'; ?>
+<?php require __DIR__ . '/../includes/navbar.php'; ?>
 
 <main>
 
@@ -89,7 +89,7 @@ require 'includes/header.php';
           <div class="cp-field cp-phone-field">
             <div class="cp-phone-inner">
               <div class="cp-phone-prefix">
-                <img src="img/kosovo-flag.png" alt="KS">
+                <img src="../img/kosovo-flag.png" alt="KS">
                 <span>+383</span>
               </div>
               <input type="tel" name="phone" placeholder="44123456" required>
@@ -171,6 +171,6 @@ require 'includes/header.php';
 </div>
 
 <script src="kontakt.js"></script>
-<script src="cookies.js"></script>
+<script src="../cookies.js"></script>
 
-<?php require 'includes/footer.php'; ?>
+<?php require __DIR__ . '/../includes/footer.php'; ?>

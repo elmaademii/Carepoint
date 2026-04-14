@@ -48,7 +48,7 @@ function currentUser()
 function requireLogin()
 {
     if (!isLoggedIn()) {
-        header("Location: login.php");
+        header("Location: ../Login-Logout/login.php");
         exit;
     }
 }
@@ -58,7 +58,7 @@ function requireRole($role)
     requireLogin();
 
     if ($_SESSION["user"]["role"] !== $role) {
-        header("Location: ballina.php");
+        header("Location: ../Ballina/ballina.php");
         exit;
     }
 }

@@ -6,7 +6,7 @@
     <title>CarePoint</title>
 
     <!-- GLOBAL CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 
     <!-- PAGE SPECIFIC CSS -->
     <?php if (isset($page_css)) : ?>
