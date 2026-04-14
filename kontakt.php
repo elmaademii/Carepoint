@@ -1,8 +1,8 @@
 <?php 
 $page_css = "kontakt.css";
-require 'includes/header.php'; 
+require __DIR__ . '/includes/header.php'; 
+require __DIR__ . '/includes/navbar.php'; 
 ?>
-<?php require 'includes/navbar.php'; ?>
 
 <main>
 
@@ -167,4 +167,4 @@ require 'includes/header.php';
 <script src="kontakt.js"></script>
 <script src="cookies.js"></script>
 
-<?php require 'includes/footer.php'; ?>
+ <?php require  __DIR__ . '/includes/footer.php'; ?>
