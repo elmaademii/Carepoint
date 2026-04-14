@@ -1,8 +1,8 @@
 <?php 
 $page_css = "stafi.css";
-require 'includes/header.php'; 
+require __DIR__ .'includes/header.php'; 
 ?>
-<?php require 'includes/navbar.php'; ?>
+<?php __DIR__ .require 'includes/navbar.php'; ?>
 
     <!-- HERO -->
     <section class="hero hero-services">
@@ -170,7 +170,7 @@ require 'includes/header.php';
 
     </main>
 
-   <?php require 'includes/footer.php'; ?>
+  
     <!-- COOKIE BANNER -->
 <div id="cookie-banner" class="cookie-banner" hidden>
   <div class="cookie-banner__content">
@@ -193,5 +193,4 @@ require 'includes/header.php';
     <script src="stafi.js"></script>
     <script src="cookies.js"></script>
 
-</body>
-</html>
+ <?php __DIR__ .require 'includes/footer.php'; ?>
