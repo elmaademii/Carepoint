@@ -1,8 +1,8 @@
 <?php 
 $page_css = "kontakt.css";
-require __DIR__ . '/includes/header.php'; 
-require __DIR__ . '/includes/navbar.php'; 
+require 'includes/header.php'; 
 ?>
+<?php require 'includes/navbar.php'; ?>
 
 <main>
 
@@ -62,14 +62,15 @@ require __DIR__ . '/includes/navbar.php';
         <p>Plotësoni formën dhe ju kontaktojmë sa më shpejt.</p>
       </div>
 
-      <form id="contact-form" class="cp-form" novalidate>
+      <!-- ✅ FORM AJAX -->
+      <form id="contact-form" class="cp-form">
 
         <div class="cp-row">
           <div class="cp-field">
-            <input type="text" name="name" placeholder="Emri i plotë *">
+            <input type="text" name="name" placeholder="Emri i plotë *" required>
           </div>
           <div class="cp-field">
-            <input type="email" name="email" placeholder="Emaili juaj *">
+            <input type="email" name="email" placeholder="Emaili juaj *" required>
           </div>
         </div>
 
@@ -80,7 +81,7 @@ require __DIR__ . '/includes/navbar.php';
                 <img src="img/kosovo-flag.png" alt="KS">
                 <span>+383</span>
               </div>
-              <input type="tel" name="phone" placeholder="Numri i telefonit *">
+              <input type="tel" name="phone" placeholder="+38344123456" required>
             </div>
           </div>
 
@@ -106,12 +107,14 @@ require __DIR__ . '/includes/navbar.php';
 
         <div class="cp-row cp-row-full">
           <div class="cp-field">
-            <textarea name="message" placeholder="Mesazhi juaj *"></textarea>
+            <textarea name="message" placeholder="Mesazhi juaj *" required></textarea>
           </div>
         </div>
 
         <button type="submit" class="cp-submit">Dërgo mesazhin</button>
-        <p id="form-message" class="form-message"></p>
+
+        <!-- ✅ ALERT DEL KËTU -->
+        <p id="form-message"></p>
 
       </form>
 
@@ -146,25 +149,20 @@ require __DIR__ . '/includes/navbar.php';
 
 </main>
 
-<!-- COOKIE BANNER (OK e lëmë këtu) -->
-<div id="cookie-banner" class="cookie-banner" hidden>
-  <div class="cookie-banner__content">
-    <p class="cookie-banner__text">
-      CarePoint përdor cookies për të përmirësuar funksionalitetin e faqes dhe për të analizuar përdorimin e saj.
-    </p>
-
-    <div class="cookie-banner__actions">
-      <button id="cookie-accept" class="cookie-btn cookie-btn--primary" type="button">
-        Prano
-      </button>
-      <button id="cookie-dismiss" class="cookie-btn cookie-btn--secondary" type="button">
-        Refuzo
-      </button>
-    </div>
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" class="cookie-banner" hidden> 
+  <div class="cookie-banner__content"> 
+    <p class="cookie-banner__text"> 
+      CarePoint përdor cookies për të përmirësuar funksionalitetin e faqes dhe për të analizuar përdorimin e saj. 
+    </p> 
+    <div class="cookie-banner__actions"> 
+      <button id="cookie-accept" class="cookie-btn cookie-btn--primary" type="button">Prano</button> 
+      <button id="cookie-dismiss" class="cookie-btn cookie-btn--secondary" type="button">Refuzo</button>
+    </div> 
   </div>
 </div>
 
 <script src="kontakt.js"></script>
 <script src="cookies.js"></script>
 
- <?php require  __DIR__ . '/includes/footer.php'; ?>
+<?php require 'includes/footer.php'; ?>
