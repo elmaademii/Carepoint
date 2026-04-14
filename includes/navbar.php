@@ -21,16 +21,16 @@ require_once __DIR__ . '/auth.php';
         <div class="logo">CarePoint</div>
 
         <nav class="main-nav">
-            <a href="ballina.php" class="active">Ballina</a>
-            <a href="rreth-carepoint.php">Rreth CarePoint</a>
-            <a href="services.php">Shërbimet</a>
-            <a href="stafi.php">Stafi</a>
-            <a href="kontakt.php">Kontakt</a>
+            <a href="../Ballina/ballina.php" class="active">Ballina</a>
+            <a href="../Rreth-CarePoint/rreth-carepoint.php">Rreth CarePoint</a>
+            <a href="../Sherbimet/services.php">Shërbimet</a>
+            <a href="../Stafi/stafi.php">Stafi</a>
+            <a href="../Kontakt/kontakt.php">Kontakt</a>
 
             <?php if (isLoggedIn()): ?>
-                <a href="logout.php">Shkyçu</a>
+                <a href="../Login-Logout/logout.php">Shkyçu</a>
             <?php else: ?>
-                <a href="login.php">Kyçu</a>
+                <a href="../Login-Logout/login.php">Kyçu</a>
             <?php endif; ?>
         </nav>
     </div>

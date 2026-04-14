@@ -1,7 +1,7 @@
 <?php 
 $page_css = "rreth-carepoint.css?v=2";
-require __DIR__ . '/includes/header.php'; 
-require __DIR__ . '/includes/navbar.php'; 
+require __DIR__ . '/../includes/header.php'; 
+require __DIR__ . '/../includes/navbar.php';
 ?>
 
 <!-- HERO SEKSION PËR ABOUT US -->
@@ -16,7 +16,7 @@ require __DIR__ . '/includes/navbar.php';
 <section class="about-section">
     <div class="container">
         <div class="photo-item" style="margin-bottom: 40px;">
-            <img src="img/spitali-kendveshtrim-i-ri.jpg" alt="Këndvështrimi i ri i spitalit CarePoint" class="photo-img">
+            <img src="../img/spitali-kendveshtrim-i-ri.jpg" alt="Këndvështrimi i ri i spitalit CarePoint" class="photo-img">
             <div class="photo-caption">
                 <h4>Këndvështrimi i ri i spitalit CarePoint</h4>
                 <p>Ndërtesa moderne me infrastrukturë të avancuar për kujdes optimal të pacientëve</p>
@@ -39,7 +39,7 @@ require __DIR__ . '/includes/navbar.php';
             </div>
 
             <div class="history-image">
-                <img src="img/spitali-brenda.jpg" alt="Brenda spitalit CarePoint">
+                <img src="../img/spitali-brenda.jpg" alt="Brenda spitalit CarePoint">
             </div>
         </div>
     </div>
@@ -80,7 +80,7 @@ require __DIR__ . '/includes/navbar.php';
 
         <div class="photo-grid-container">
             <div class="photo-item">
-                <img src="img/spitali-departamenti.jpg" alt="Departamenti mjekësor i spitalit" class="photo-img">
+                <img src="../img/spitali-departamenti.jpg" alt="Departamenti mjekësor i spitalit" class="photo-img">
                 <div class="photo-caption">
                     <h4>Departamenti mjekësor</h4>
                     <p>Ambiente të specializuara për trajtime dhe konsultime mjekësore</p>
@@ -88,7 +88,7 @@ require __DIR__ . '/includes/navbar.php';
             </div>
 
             <div class="photo-item">
-                <img src="img/spitali-brenda-hol.jpg" alt="Holi i spitalit CarePoint" class="photo-img">
+                <img src="../img/spitali-brenda-hol.jpg" alt="Holi i spitalit CarePoint" class="photo-img">
                 <div class="photo-caption">
                     <h4>Holi i spitalit</h4>
                     <p>Hapësirë e gjerë dhe komode për pritjen e pacientëve dhe vizitorëve</p>
@@ -96,7 +96,7 @@ require __DIR__ . '/includes/navbar.php';
             </div>
 
             <div class="photo-item">
-                <img src="img/spitali-teknologji.jpg" alt="Teknologjia moderne e spitalit" class="photo-img">
+                <img src="../img/spitali-teknologji.jpg" alt="Teknologjia moderne e spitalit" class="photo-img">
                 <div class="photo-caption">
                     <h4>Teknologjia moderne</h4>
                     <p>Pajisje mjekësore të fundit për diagnostikim dhe trajtim të saktë</p>
@@ -104,7 +104,7 @@ require __DIR__ . '/includes/navbar.php';
             </div>
 
             <div class="photo-item">
-                <img src="img/spitali-oborr.jpg" alt="Oborri i spitalit CarePoint" class="photo-img">
+                <img src="../img/spitali-oborr.jpg" alt="Oborri i spitalit CarePoint" class="photo-img">
                 <div class="photo-caption">
                     <h4>Oborri i spitalit</h4>
                     <p>Hapësirë e gjelbër dhe ambient i këndshëm për pushim dhe relaksim</p>
@@ -418,6 +418,6 @@ require __DIR__ . '/includes/navbar.php';
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="rreth-carepoint.js?v=2"></script>
-<script src="cookies.js"></script>
+<script src="../cookies.js"></script>
 
-<?php require __DIR__ . '/includes/footer.php'; ?>
+<?php require __DIR__ . '/../includes/footer.php'; ?>

@@ -1,8 +1,8 @@
 <?php 
 $page_css = "ballina.css";
-require __DIR__ . '/includes/header.php'; 
+require __DIR__ . '/../includes/header.php';
 ?>
-<?php require __DIR__ . '/includes/navbar.php'; ?>
+<?php require __DIR__ . '/../includes/navbar.php'; ?>
 
 <!-- HERO – pjesa kryesore me background -->
 <section class="hero">
@@ -16,8 +16,8 @@ require __DIR__ . '/includes/header.php';
             <p>Spital modern me staf profesional dhe teknologji të avancuar.</p>
 
             <div class="hero-buttons">
-                <a href="services.php" class="btn btn-primary">Shiko shërbimet</a>
-                <a href="kontakt.php" class="btn btn-secondary">Rezervo termin</a>
+                <a href="../Sherbimet/services.php" class="btn btn-primary">Shiko shërbimet</a>
+                <a href="../Kontakt/kontakt.php" class="btn btn-secondary">Rezervo termin</a>
             </div>
         </div>
 
@@ -65,7 +65,7 @@ require __DIR__ . '/includes/header.php';
   </div>
 </div>
 
-<?php require __DIR__ . '/includes/footer.php'; ?>
+<?php require __DIR__ . '/../includes/footer.php'; ?>
 
 <script src="ballina.js"></script>
-<script src="cookies.js"></script>
+<script src="../cookies.js"></script>

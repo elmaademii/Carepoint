@@ -1,6 +1,6 @@
 <?php
 $page_css = "login.css";
-require_once "includes/auth.php";
+require_once __DIR__ . '/../includes/auth.php';
 
 $error = "";
 $selectedRole = $_GET["role"] ?? "";
@@ -20,9 +20,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         ];
 
         if ($user["role"] === "admin") {
-            header("Location: dashboard.php");
+            header("Location: ../Dashboard/dashboard.php");
         } else {
-            header("Location: ballina.php");
+            header("Location: ../Ballina/ballina.php");
         }
 
         exit;
@@ -32,8 +32,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 ?>
 
-<?php require "includes/header.php"; ?>
-<?php require "includes/navbar.php"; ?>
+<?php require __DIR__ . '/../includes/header.php'; ?>
+<?php require __DIR__ . '/../includes/navbar.php'; ?>
 
 <main>
     <?php if ($selectedRole !== "admin" && $selectedRole !== "patient"): ?>
@@ -121,4 +121,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <?php endif; ?>
 </main>
 
-<?php require "includes/footer.php"; ?>
+<?php require __DIR__ . '/../includes/footer.php'; ?>
