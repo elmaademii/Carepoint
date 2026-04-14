@@ -1,8 +1,8 @@
 <?php 
 $page_css = "reth-carepoint.css";
-require __DIR__ .'includes/header.php'; 
+require __DIR__ . '/includes/header.php'; 
+require __DIR__ . '/includes/navbar.php'; 
 ?>
-<?php require __DIR__ .'includes/navbar.php'; ?>
 
 <!-- HERO SEKSION PËR ABOUT US -->
 <section class="hero-about">
@@ -147,5 +147,4 @@ require __DIR__ .'includes/header.php';
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="rreth-carepoint.js"></script>
 <script src="cookies.js"></script>
-
-<?php require __DIR__ . 'includes/footer.php'; ?>
+ <?php require  __DIR__ . '/includes/footer.php'; ?>
