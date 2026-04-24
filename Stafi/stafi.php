@@ -2,7 +2,124 @@
 $page_css = "stafi.css";
 require __DIR__ . '/../includes/header.php'; 
 require __DIR__ . '/../includes/navbar.php'; 
+
+// Numeric array
+$departments = ["Kardiologji", "Neurologji", "Gjinekologji", "Laborator", "Radiologji", "Pediatri", "Ortopedi"];
+
+// Associative array
+$featuredDoctor = [
+    "name" => "Dr. Arben Hoxha",
+    "specialty" => "Kardiolog",
+    "experience" => 12
+];
+
+// Multidimensional array
+$doctors = [
+    [
+        "name" => "Dr. Arben Hoxha",
+        "specialty" => "Kardiolog",
+        "experience" => 12,
+        "image" => "../img/kardiolog.jpg",
+        "file" => "kardiolog-1.html"
+    ],
+    [
+        "name" => "Dr. Dritan Shala",
+        "specialty" => "Kardiolog",
+        "experience" => 9,
+        "image" => "../img/kardiologu.jpg",
+        "file" => "kardiolog-2.html"
+    ],
+    [
+        "name" => "Dr. Fatmir Krasniqi",
+        "specialty" => "Neurologjist",
+        "experience" => 11,
+        "image" => "../img/neurologjist.jpg",
+        "file" => "neurologjist-1.html"
+    ],
+    [
+        "name" => "Dr. Liridona Berisha",
+        "specialty" => "Neurologjiste",
+        "experience" => 8,
+        "image" => "../img/neurologjiste.jpg",
+        "file" => "neurologjiste.html"
+    ],
+    [
+        "name" => "Dr. Elona Gashi",
+        "specialty" => "Gjinekologe",
+        "experience" => 10,
+        "image" => "../img/gjinekologia.jpg",
+        "file" => "gjinekologe-1.html"
+    ],
+    [
+        "name" => "Dr. Anisa Bytyqi",
+        "specialty" => "Gjinekologe",
+        "experience" => 6,
+        "image" => "../img/gjinekologiaa.jpg",
+        "file" => "gjinekologe-2.html"
+    ],
+    [
+        "name" => "Dr. Shkumbin Rexhepi",
+        "specialty" => "Laborant",
+        "experience" => 7,
+        "image" => "../img/laboranti.jpg",
+        "file" => "laborant.html"
+    ],
+    [
+        "name" => "Dr. Valmira Jakupi",
+        "specialty" => "Laborante",
+        "experience" => 5,
+        "image" => "../img/laborante.jpg",
+        "file" => "laborante.html"
+    ],
+    [
+        "name" => "Dr. Agron Bajrami",
+        "specialty" => "Radiologjist",
+        "experience" => 13,
+        "image" => "../img/radiologjist.jpg",
+        "file" => "radiologjist.html"
+    ],
+    [
+        "name" => "Dr. Ramadan Luma",
+        "specialty" => "Mjek Familjar",
+        "experience" => 15,
+        "image" => "../img/MjekuFamiljar.jpg",
+        "file" => "mjek-familjar.html"
+    ],
+    [
+        "name" => "Dr. Vlora Morina",
+        "specialty" => "Pediatre",
+        "experience" => 7,
+        "image" => "../img/pediatre.jpg",
+        "file" => "pediatre.html"
+    ],
+    [
+        "name" => "Dr. Agim Hoxha",
+        "specialty" => "Ortoped",
+        "experience" => 14,
+        "image" => "../img/ortopedi - Copy.jpg",
+        "file" => "ortoped.html"
+    ]
+];
+
+function sortDoctors($doctors, $sortBy)
+{
+    if ($sortBy === "name") {
+        usort($doctors, function ($a, $b) {
+            return strcmp($a["name"], $b["name"]);
+        });
+    } else {
+        usort($doctors, function ($a, $b) {
+            return $b["experience"] <=> $a["experience"];
+        });
+    }
+
+    return $doctors;
+}
+
+$sortBy = $_GET["sort"] ?? "experience";
+$sortedDoctors = sortDoctors($doctors, $sortBy);
 ?>
+
 
 <!-- HERO -->
 <section class="hero hero-services">
@@ -21,7 +138,10 @@ require __DIR__ . '/../includes/navbar.php';
 <!-- GRID E STAFIT -->
 <main class="container">
 
-    <!-- TOOLS: Search -->
+    <!-- 
+        Kjo pjese perdor te dhenat nga arrays ne PHP.
+        $doctors eshte multidimensional array, ndersa $departments eshte numeric array.
+    -->
     <section class="staff-tools">
         <input
             type="text"
@@ -29,146 +149,64 @@ require __DIR__ . '/../includes/navbar.php';
             placeholder="Kërko sipas emrit ose specializimit..."
             aria-label="Kërko staf"
         />
-        <div class="staff-stats" id="staffStats"></div>
+
+        <!-- 
+            count() perdoret per te numeruar sa doktore dhe sa departamente jane ne arrays.
+        -->
+        <div class="staff-stats" id="staffStats">
+            <?php echo count($doctors); ?> staf • <?php echo count($departments); ?> departamente
+        </div>
+
+        <!-- 
+            Keto linke dergojne parameter ne URL (?sort=experience ose ?sort=name).
+            PHP e lexon me $_GET["sort"] dhe pastaj funksioni sortDoctors() ben sortimin.
+        -->
+        <div class="staff-stats">
+            Sorto:
+            <a href="stafi.php?sort=experience">Sipas eksperiencës</a> |
+            <a href="stafi.php?sort=name">Sipas emrit</a>
+        </div>
     </section>
 
     <section class="staff-grid">
 
-        <!-- Kardiolog 1 -->
-        <a href="kardiolog-1.html" class="staff-link">
-            <article class="staff-card">
-                <div class="staff-image">
-                    <img src="../img/kardiolog.jpg" alt="Kardiolog 1">
-                </div>
-                <h3>Dr. Arben Hoxha</h3>
-                <p class="staff-specialty">Kardiolog</p>
-            </article>
-        </a>
+        <!-- 
+            foreach kalon neper secilin doktor nga array i sortuar.
+            $sortedDoctors vjen nga funksioni sortDoctors().
+        -->
+        <?php foreach ($sortedDoctors as $doctor): ?>
+            <a href="<?php echo htmlspecialchars($doctor["file"]); ?>" class="staff-link">
+                <article class="staff-card">
+                    <div class="staff-image">
+                        <img 
+                            src="<?php echo htmlspecialchars($doctor["image"]); ?>" 
+                            alt="<?php echo htmlspecialchars($doctor["specialty"]); ?>"
+                        >
+                    </div>
 
-        <!-- Kardiolog 2 -->
-        <a href="kardiolog-2.html" class="staff-link">
-            <article class="staff-card">
-                <div class="staff-image">
-                    <img src="../img/kardiologu.jpg" alt="Kardiolog 2">
-                </div>
-                <h3>Dr. Dritan Shala</h3>
-                <p class="staff-specialty">Kardiolog</p>
-            </article>
-        </a>
+                    <!-- 
+                        htmlspecialchars() perdoret per shfaqje me te sigurt te te dhenave ne HTML.
+                    -->
+                    <h3><?php echo htmlspecialchars($doctor["name"]); ?></h3>
+                    <p class="staff-specialty"><?php echo htmlspecialchars($doctor["specialty"]); ?></p>
 
-        <!-- Neurologjist (mashkull) -->
-        <a href="neurologjist-1.html" class="staff-link">
-            <article class="staff-card">
-                <div class="staff-image">
-                    <img src="../img/neurologjist.jpg" alt="Neurologjist">
-                </div>
-                <h3>Dr. Fatmir Krasniqi</h3>
-                <p class="staff-specialty">Neurologjist</p>
-            </article>
-        </a>
-
-        <!-- Neurologjiste (femer) -->
-        <a href="neurologjiste.html" class="staff-link">
-            <article class="staff-card">
-                <div class="staff-image">
-                    <img src="../img/neurologjiste.jpg" alt="Neurologjiste">
-                </div>
-                <h3>Dr. Liridona Berisha</h3>
-                <p class="staff-specialty">Neurologjiste</p>
-            </article>
-        </a>
-
-        <!-- Gjinekologe 1 -->
-        <a href="gjinekologe-1.html" class="staff-link">
-            <article class="staff-card">
-                <div class="staff-image">
-                    <img src="../img/gjinekologia.jpg" alt="Gjinekologe 1">
-                </div>
-                <h3>Dr. Elona Gashi</h3>
-                <p class="staff-specialty">Gjinekologe</p>
-            </article>
-        </a>
-
-        <!-- Gjinekologe 2 -->
-        <a href="gjinekologe-2.html" class="staff-link">
-            <article class="staff-card">
-                <div class="staff-image">
-                    <img src="../img/gjinekologiaa.jpg" alt="Gjinekologe 2">
-                </div>
-                <h3>Dr. Anisa Bytyqi</h3>
-                <p class="staff-specialty">Gjinekologe</p>
-            </article>
-        </a>
-
-        <!-- Laborant (mashkull) -->
-        <a href="laborant.html" class="staff-link">
-            <article class="staff-card">
-                <div class="staff-image">
-                    <img src="../img/laboranti.jpg" alt="Laborant">
-                </div>
-                <h3>Dr. Shkumbin Rexhepi</h3>
-                <p class="staff-specialty">Laborant</p>
-            </article>
-        </a>
-
-        <!-- Laborante (femer) -->
-        <a href="laborante.html" class="staff-link">
-            <article class="staff-card">
-                <div class="staff-image">
-                    <img src="../img/laborante.jpg" alt="Laborante">
-                </div>
-                <h3>Dr. Valmira Jakupi</h3>
-                <p class="staff-specialty">Laborante</p>
-            </article>
-        </a>
-
-        <!-- Radiologjist -->
-        <a href="radiologjist.html" class="staff-link">
-            <article class="staff-card">
-                <div class="staff-image">
-                    <img src="../img/radiologjist.jpg" alt="Radiologjist">
-                </div>
-                <h3>Dr. Agron Bajrami</h3>
-                <p class="staff-specialty">Radiologjist</p>
-            </article>
-        </a>
-
-        <!-- Mjek Familjar -->
-        <a href="mjek-familjar.html" class="staff-link">
-            <article class="staff-card">
-                <div class="staff-image">
-                    <img src="../img/MjekuFamiljar.jpg" alt="Mjek Familjar">
-                </div>
-                <h3>Dr. Ramadan Luma</h3>
-                <p class="staff-specialty">Mjek Familjar</p>
-            </article>
-        </a>
-
-        <!-- Pediatër -->
-        <a href="pediatre.html" class="staff-link">
-            <article class="staff-card">
-                <div class="staff-image">
-                    <img src="../img/pediatre.jpg" alt="Pediatër">
-                </div>
-                <h3>Dr. Vlora Morina</h3>
-                <p class="staff-specialty">Pediatre</p>
-            </article>
-        </a>
-
-        <!-- Ortoped -->
-        <a href="ortoped.html" class="staff-link">
-            <article class="staff-card">
-                <div class="staff-image">
-                    <img src="../img/ortopedi - Copy.jpg" alt="Ortoped">
-                </div>
-                <h3>Dr. Agim Hoxha</h3>
-                <p class="staff-specialty">Ortoped</p>
-            </article>
-        </a>
+                    <!-- 
+                        if/else kontrollon eksperiencen.
+                        Nese doktori ka 10 ose me shume vite pervoje, shfaqet si Senior Doctor.
+                    -->
+                    <?php if ($doctor["experience"] >= 10): ?>
+                        <p class="staff-specialty">Senior Doctor - <?php echo $doctor["experience"]; ?> vite përvojë</p>
+                    <?php else: ?>
+                        <p class="staff-specialty"><?php echo $doctor["experience"]; ?> vite përvojë</p>
+                    <?php endif; ?>
+                </article>
+            </a>
+        <?php endforeach; ?>
 
     </section>
 
 </main>
+
 
 <!-- COOKIE BANNER -->
 <div id="cookie-banner" class="cookie-banner" hidden>
