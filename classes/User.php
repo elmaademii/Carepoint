@@ -22,5 +22,17 @@ class User{
         return $this->role;
     }
 
+    public function setName($name) {
+    $this->name = $name;
+    }
+
+    public function setEmail($email) {
+        $this->email = $email;
+    }
+
+    public function setRole($role) {
+        $this->role = $role;
+    }
+
 }
 ?>

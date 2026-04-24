@@ -41,5 +41,25 @@ class Doctor extends User{
     public function getDoctorProfile(){
         return $this->getName() . " - " . $this->specialty . " - " . $this->experience;
     }
+
+    public function setSpecialty($specialty) {
+    $this->specialty = $specialty;
+    }
+
+    public function setPhone($phone) {
+    $this->phone = $phone;
+    }
+
+    public function setExperience($experience) {
+    $this->experience = $experience;
+    }
+
+    public function setImage($image) {
+    $this->image = $image;
+    }
+
+    public function setProfileLink($profileLink) {
+    $this->profileLink = $profileLink;
+    }
 }
 ?>
