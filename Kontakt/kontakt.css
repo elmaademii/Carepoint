@@ -2,7 +2,7 @@
 
 .hero {
   min-height: 60vh;
-  background: url("img/carepoint.kontakti.png") center/cover no-repeat;
+  background: url("../img/carepoint.kontakti.png") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
