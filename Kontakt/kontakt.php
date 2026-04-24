@@ -1,5 +1,5 @@
 <?php 
-$page_css = "kontakt.css";
+$page_css = "kontakt.css?v=2";
 require __DIR__ . '/../includes/header.php';
 ?>
 <?php require __DIR__ . '/../includes/navbar.php'; ?>
