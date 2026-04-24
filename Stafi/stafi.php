@@ -2,6 +2,22 @@
 $page_css = "stafi.css";
 require __DIR__ . '/../includes/header.php'; 
 require __DIR__ . '/../includes/navbar.php'; 
+require_once __DIR__ . '/../classes/Doctor.php';
+
+$doctors = [
+    new Doctor("Dr. Arben Hoxha", "arben@carepoint.com", "doctor", "Kardiolog", "+38344111222", "25+ vjet përvojë", "../img/kardiolog.jpg", "kardiolog-1.html"),
+    new Doctor("Dr. Dritan Shala", "dritan@carepoint.com", "doctor", "Kardiolog", "+38344111333", "20 vjet përvojë", "../img/kardiologu.jpg", "kardiolog-2.html"),
+    new Doctor("Dr. Fatmir Krasniqi", "fatmir@carepoint.com", "doctor", "Neurologjist", "+38344111444", "22 vjet përvojë", "../img/neurologjist.jpg", "neurologjist-1.html"),
+    new Doctor("Dr. Liridona Berisha", "liridona@carepoint.com", "doctor", "Neurologjiste", "+38344111555", "15 vjet përvojë", "../img/neurologjiste.jpg", "neurologjiste.html"),
+    new Doctor("Dr. Elona Gashi", "elona@carepoint.com", "doctor", "Gjinekologe", "+38344111666", "30 vjet përvojë", "../img/gjinekologia.jpg", "gjinekologe-1.html"),
+    new Doctor("Dr. Anisa Bytyqi", "anisa@carepoint.com", "doctor", "Gjinekologe", "+38344111777", "9 vjet përvojë", "../img/gjinekologiaa.jpg", "gjinekologe-2.html"),
+    new Doctor("Dr. Shkumbin Rexhepi", "shkumbin@carepoint.com", "doctor", "Laborant", "+38344111888", "10 vjet përvojë", "../img/laboranti.jpg", "laborant.html"),
+    new Doctor("Dr. Valmira Jakupi", "valmira@carepoint.com", "doctor", "Laborante", "+38344111999", "9 vjet përvojë", "../img/laborante.jpg", "laborante.html"),
+    new Doctor("Dr. Agron Bajrami", "agron@carepoint.com", "doctor", "Radiologjist", "+38344111000", "16 vjet përvojë", "../img/radiologjist.jpg", "radiologjist.html"),
+    new Doctor("Dr. Ramadan Luma", "ramadan@carepoint.com", "doctor", "Mjek Familjar", "+38344112121", "35 vjet përvojë", "../img/MjekuFamiljar.jpg", "mjek-familjar.html"),
+    new Doctor("Dr. Vlora Morina", "vlora@carepoint.com", "doctor", "Pediatre", "+38344113131", "15 vjet përvojë", "../img/pediatre.jpg", "pediatre.html"),
+    new Doctor("Dr. Agim Hoxha", "agim@carepoint.com", "doctor", "Ortoped", "+38344114141", "32 vjet përvojë", "../img/ortopedi - Copy.jpg", "ortoped.html"),
+];
 ?>
 
 <!-- HERO -->
@@ -32,141 +48,24 @@ require __DIR__ . '/../includes/navbar.php';
         <div class="staff-stats" id="staffStats"></div>
     </section>
 
-    <section class="staff-grid">
+   <section class="staff-grid">
 
-        <!-- Kardiolog 1 -->
-        <a href="kardiolog-1.html" class="staff-link">
+    <?php foreach ($doctors as $doctor): ?>
+        <a href="<?php echo $doctor->getProfileLink(); ?>" class="staff-link">
             <article class="staff-card">
+
                 <div class="staff-image">
-                    <img src="../img/kardiolog.jpg" alt="Kardiolog 1">
+                    <img src="<?php echo $doctor->getImage(); ?>" alt="<?php echo htmlspecialchars($doctor->getName()); ?>">
                 </div>
-                <h3>Dr. Arben Hoxha</h3>
-                <p class="staff-specialty">Kardiolog</p>
+
+                <h3><?php echo htmlspecialchars($doctor->getName()); ?></h3>
+                <p class="staff-specialty"><?php echo htmlspecialchars($doctor->getSpecialty()); ?></p>
+
             </article>
         </a>
+    <?php endforeach; ?>
 
-        <!-- Kardiolog 2 -->
-        <a href="kardiolog-2.html" class="staff-link">
-            <article class="staff-card">
-                <div class="staff-image">
-                    <img src="../img/kardiologu.jpg" alt="Kardiolog 2">
-                </div>
-                <h3>Dr. Dritan Shala</h3>
-                <p class="staff-specialty">Kardiolog</p>
-            </article>
-        </a>
-
-        <!-- Neurologjist (mashkull) -->
-        <a href="neurologjist-1.html" class="staff-link">
-            <article class="staff-card">
-                <div class="staff-image">
-                    <img src="../img/neurologjist.jpg" alt="Neurologjist">
-                </div>
-                <h3>Dr. Fatmir Krasniqi</h3>
-                <p class="staff-specialty">Neurologjist</p>
-            </article>
-        </a>
-
-        <!-- Neurologjiste (femer) -->
-        <a href="neurologjiste.html" class="staff-link">
-            <article class="staff-card">
-                <div class="staff-image">
-                    <img src="../img/neurologjiste.jpg" alt="Neurologjiste">
-                </div>
-                <h3>Dr. Liridona Berisha</h3>
-                <p class="staff-specialty">Neurologjiste</p>
-            </article>
-        </a>
-
-        <!-- Gjinekologe 1 -->
-        <a href="gjinekologe-1.html" class="staff-link">
-            <article class="staff-card">
-                <div class="staff-image">
-                    <img src="../img/gjinekologia.jpg" alt="Gjinekologe 1">
-                </div>
-                <h3>Dr. Elona Gashi</h3>
-                <p class="staff-specialty">Gjinekologe</p>
-            </article>
-        </a>
-
-        <!-- Gjinekologe 2 -->
-        <a href="gjinekologe-2.html" class="staff-link">
-            <article class="staff-card">
-                <div class="staff-image">
-                    <img src="../img/gjinekologiaa.jpg" alt="Gjinekologe 2">
-                </div>
-                <h3>Dr. Anisa Bytyqi</h3>
-                <p class="staff-specialty">Gjinekologe</p>
-            </article>
-        </a>
-
-        <!-- Laborant (mashkull) -->
-        <a href="laborant.html" class="staff-link">
-            <article class="staff-card">
-                <div class="staff-image">
-                    <img src="../img/laboranti.jpg" alt="Laborant">
-                </div>
-                <h3>Dr. Shkumbin Rexhepi</h3>
-                <p class="staff-specialty">Laborant</p>
-            </article>
-        </a>
-
-        <!-- Laborante (femer) -->
-        <a href="laborante.html" class="staff-link">
-            <article class="staff-card">
-                <div class="staff-image">
-                    <img src="../img/laborante.jpg" alt="Laborante">
-                </div>
-                <h3>Dr. Valmira Jakupi</h3>
-                <p class="staff-specialty">Laborante</p>
-            </article>
-        </a>
-
-        <!-- Radiologjist -->
-        <a href="radiologjist.html" class="staff-link">
-            <article class="staff-card">
-                <div class="staff-image">
-                    <img src="../img/radiologjist.jpg" alt="Radiologjist">
-                </div>
-                <h3>Dr. Agron Bajrami</h3>
-                <p class="staff-specialty">Radiologjist</p>
-            </article>
-        </a>
-
-        <!-- Mjek Familjar -->
-        <a href="mjek-familjar.html" class="staff-link">
-            <article class="staff-card">
-                <div class="staff-image">
-                    <img src="../img/MjekuFamiljar.jpg" alt="Mjek Familjar">
-                </div>
-                <h3>Dr. Ramadan Luma</h3>
-                <p class="staff-specialty">Mjek Familjar</p>
-            </article>
-        </a>
-
-        <!-- Pediatër -->
-        <a href="pediatre.html" class="staff-link">
-            <article class="staff-card">
-                <div class="staff-image">
-                    <img src="../img/pediatre.jpg" alt="Pediatër">
-                </div>
-                <h3>Dr. Vlora Morina</h3>
-                <p class="staff-specialty">Pediatre</p>
-            </article>
-        </a>
-
-        <!-- Ortoped -->
-        <a href="ortoped.html" class="staff-link">
-            <article class="staff-card">
-                <div class="staff-image">
-                    <img src="../img/ortopedi - Copy.jpg" alt="Ortoped">
-                </div>
-                <h3>Dr. Agim Hoxha</h3>
-                <p class="staff-specialty">Ortoped</p>
-            </article>
-        </a>
-
-    </section>
+</section>
 
 </main>
 

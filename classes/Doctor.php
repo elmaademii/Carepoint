@@ -13,7 +13,7 @@ class Doctor extends User{
         parent::__construct($name, $email, $role);
         $this->specialty = $specialty;
         $this->phone = $phone;
-        $this->experience = $experience
+        $this->experience = $experience;
         $this->image = $image;
         $this->profileLink = $profileLink;
     }
