@@ -1,32 +1,34 @@
-<<?php
+<?php
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $name = trim($_POST["name"] ?? "");
+    $email = trim($_POST["email"] ?? "");
+    $phone = trim($_POST["phone"] ?? "");
+    $message = trim($_POST["message"] ?? "");
 
-    $name = trim($_POST['name'] ?? '');
-    $email = trim($_POST['email'] ?? '');
-    $phone = trim($_POST['phone'] ?? '');
-    $message = trim($_POST['message'] ?? '');
-
-    if (!preg_match("/^[a-zA-Z ]+$/", $name)) {
-        header("Location: ../kontakt.php?error=Emri nuk është valid!");
+    if (!preg_match("/^[a-zA-ZëËçÇ\s]{2,50}$/u", $name)) {
+        header("Location: ../Kontakt/kontakt.php?error=Emri nuk eshte valid");
         exit;
     }
 
     if (!preg_match("/^[\w\.-]+@[\w\.-]+\.[a-zA-Z]{2,}$/", $email)) {
-        header("Location: ../kontakt.php?error=Email nuk është valid!");
+        header("Location: ../Kontakt/kontakt.php?error=Email nuk eshte valid");
         exit;
     }
 
     if (!preg_match("/^[0-9]{8}$/", $phone)) {
-        header("Location: ../kontakt.php?error=Numri duhet të ketë 8 shifra pas prefiksit +383");
+        header("Location: ../Kontakt/kontakt.php?error=Numri duhet te kete 8 shifra pas prefiksit +383");
         exit;
     }
 
-    if (mb_strlen($message) < 5) {
-        header("Location: ../kontakt.php?error=Mesazhi është shumë i shkurtër!");
+    if (strlen($message) < 5) {
+        header("Location: ../Kontakt/kontakt.php?error=Mesazhi eshte shume i shkurter");
         exit;
     }
 
-    header("Location: ../kontakt.php?success=1");
+    header("Location: ../Kontakt/kontakt.php?success=1");
     exit;
 }
+
+header("Location: ../Kontakt/kontakt.php");
+exit;
