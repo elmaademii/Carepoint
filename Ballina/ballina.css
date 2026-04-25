@@ -7,7 +7,7 @@
     min-height: 100vh;
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)),
-        url("img/ballina.jpg"); 
+        url("../img/ballina.jpg"); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -212,4 +212,160 @@
         width: 100%;
         text-align: center;
     }
+}
+
+/* =============================================
+   WELCOME BAR — personalizimi me cookies
+============================================= */
+.welcome-bar {
+    background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+    color: #fff;
+    padding: 0;
+}
+
+.welcome-bar__inner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+}
+
+.welcome-bar i.fa-circle-check {
+    font-size: 1rem;
+    opacity: 0.85;
+    flex-shrink: 0;
+}
+
+.welcome-bar__inner span {
+    flex: 1;
+    min-width: 0;
+}
+
+.welcome-bar__link {
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-size: 0.82rem;
+    border: 1px solid rgba(255,255,255,0.35);
+    padding: 4px 12px;
+    white-space: nowrap;
+    transition: background 0.15s;
+}
+
+.welcome-bar__link:hover {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+}
+
+/* =============================================
+   COOKIE POPUP — overlay + panel në mes
+============================================= */
+
+/* Errëson gjithçka poshtë */
+.ck-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 9998;
+    animation: ck-fade-in 0.3s ease;
+}
+
+/* Paneli qendror */
+.ck-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background: #ffffff;
+    width: 90%;
+    max-width: 620px;
+    padding: 36px 42px 30px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.30);
+    animation: ck-slide-up 0.35s ease;
+}
+
+/* Logo */
+.ck-logo {
+    text-align: center;
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: #00645c;
+    margin-bottom: 22px;
+    letter-spacing: -0.5px;
+}
+.ck-logo span { color: #00837b; }
+
+/* Teksti */
+.ck-text {
+    font-size: 0.91rem;
+    line-height: 1.65;
+    color: #333;
+    text-align: justify;
+    margin-bottom: 14px;
+}
+.ck-text a { color: #00645c; text-decoration: underline; }
+.ck-text a:hover { color: #00837b; }
+
+/* Qëllimet */
+.ck-purposes-title {
+    font-size: 0.91rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 5px;
+}
+.ck-purposes-desc {
+    font-size: 0.86rem;
+    color: #555;
+    line-height: 1.5;
+    text-align: justify;
+    margin-bottom: 24px;
+}
+
+/* Butonat */
+.ck-buttons {
+    display: flex;
+    gap: 10px;
+}
+.ck-btn {
+    flex: 1;
+    padding: 13px 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: system-ui, sans-serif;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.15s;
+}
+.ck-btn:hover { opacity: 0.85; }
+
+.ck-btn-drejtat {
+    background: #e8e8e8;
+    color: #222;
+    border: 1px solid #c8c8c8;
+}
+.ck-btn-refuzoj {
+    background: #00645c;
+    color: #fff;
+}
+.ck-btn-pranoj {
+    background: #00837b;
+    color: #fff;
+}
+
+/* Animacionet */
+@keyframes ck-fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@keyframes ck-slide-up {
+    from { opacity: 0; transform: translate(-50%, -44%); }
+    to   { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .ck-popup { padding: 24px 20px 22px; }
+    .ck-buttons { flex-direction: column; }
 }
