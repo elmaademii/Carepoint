@@ -157,20 +157,5 @@ require __DIR__ . '/../includes/header.php';
 
 </main>
 
-<!-- COOKIE BANNER -->
-<div id="cookie-banner" class="cookie-banner" hidden> 
-  <div class="cookie-banner__content"> 
-    <p class="cookie-banner__text"> 
-      CarePoint përdor cookies për të përmirësuar funksionalitetin e faqes dhe për të analizuar përdorimin e saj. 
-    </p> 
-    <div class="cookie-banner__actions"> 
-      <button id="cookie-accept" class="cookie-btn cookie-btn--primary" type="button">Prano</button> 
-      <button id="cookie-dismiss" class="cookie-btn cookie-btn--secondary" type="button">Refuzo</button>
-    </div> 
-  </div>
-</div>
-
 <script src="kontakt.js"></script>
-<script src="../cookies.js"></script>
-
 <?php require __DIR__ . '/../includes/footer.php'; ?>
