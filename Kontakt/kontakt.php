@@ -159,8 +159,5 @@ require __DIR__ . '/../includes/header.php';
 
 <script src="kontakt.js"></script>
 <?php require __DIR__ . '/../includes/footer.php'; ?>
-<script src="cookies.js"></script>
-
- <?php require  __DIR__ . '/includes/footer.php'; ?>
 
  
