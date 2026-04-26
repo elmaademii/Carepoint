@@ -1,7 +1,5 @@
 /* ============================================================
-   te_drejtat_tuaja.css — CarePoint
-   Stilet për faqen "Të Drejtat Tuaja"
-   Ngjyrat nga style.css: --primary:#00837b  --primary-dark:#00645c
+   Stilet per faqen "Të Drejtat Tuaja"
 ============================================================ */
 
 /* ===== HERO ===== */
@@ -204,7 +202,7 @@
     margin-top: 20px;
 }
 
-/* Butonat kryesorë — stilizuar si projekti */
+/* Butonat kryesorë  */
 .btn-carepoint {
     padding: 11px 22px;
     font-size: 0.93rem;
