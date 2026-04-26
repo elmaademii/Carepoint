@@ -158,12 +158,9 @@ require __DIR__ . '/../includes/header.php';
 </main>
 
 <script src="kontakt.js"></script>
-<<<<<<< HEAD:Kontakt/kontakt.php
 <?php require __DIR__ . '/../includes/footer.php'; ?>
-=======
 <script src="cookies.js"></script>
 
  <?php require  __DIR__ . '/includes/footer.php'; ?>
 
  
->>>>>>> 0ffb20c (ndryshime lokale):kontakt.php
