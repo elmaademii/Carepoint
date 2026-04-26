@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 $page_css = "login.css";
 require_once __DIR__ . '/../includes/auth.php';
 
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if ($user["role"] === "admin") {
             header("Location: ../Dashboard/dashboard.php");
         } else {
-            header("Location: ../Ballina/ballina.php");
+            header("Location: ../Dashboard/patient.php");
         }
 
         exit;
@@ -102,7 +102,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                         <div class="login-field">
                             <label for="password">Fjalëkalimi</label>
-                            <input type="password" id="password" name="password" placeholder="Shëno fjalëkalimin" required>
+
+                            <div class="password-wrapper">
+                                <input type="password" id="password" name="password" placeholder="Shëno fjalëkalimin" required>
+                                <i class="fa-solid fa-eye" id="togglePassword"></i>
+                            </div>
                         </div>
 
                         <button type="submit">Kyçu</button>
@@ -120,5 +124,22 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <?php endif; ?>
 </main>
+<script>
+const passwordInput = document.getElementById("password");
+const togglePassword = document.getElementById("togglePassword");
 
+if (togglePassword) {
+    togglePassword.addEventListener("click", function () {
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            this.classList.remove("fa-eye");
+            this.classList.add("fa-eye-slash");
+        } else {
+            passwordInput.type = "password";
+            this.classList.remove("fa-eye-slash");
+            this.classList.add("fa-eye");
+        }
+    });
+}
+</script>
 <?php require __DIR__ . '/../includes/footer.php'; ?>
