@@ -2,7 +2,7 @@
 $page_css = "dashboard.css";
 require_once __DIR__ . '/../includes/auth.php';
 
-requireRole("admin");
+requireRole("patient");
 
 $user = currentUser();
 ?>
@@ -14,7 +14,7 @@ $user = currentUser();
     <section class="dashboard-hero">
         <div class="container dashboard-content">
             <div class="dashboard-welcome">
-                <span class="dashboard-label">Paneli i administratorit</span>
+                <span class="dashboard-label">Paneli i pacientit</span>
                 <h1>Mirë se erdhe në CarePoint</h1>
 
                 <a href="../Login-Logout/logout.php" class="logout-btn">Shkyçu</a>

@@ -1,9 +1,7 @@
-.role-section {
+.role-section{
     background: linear-gradient(135deg, rgba(0, 131, 123, 0.08), rgba(0, 100, 92, 0.14));
-    min-height: calc(100vh - 156px);
-    padding: 4rem 0;
-    display: flex;
-    align-items: center;
+    min-height: calc(100vh - 110px);
+    padding: 3rem 0;
 }
 
 .role-header {
@@ -79,17 +77,15 @@
 
 .login-hero {
     background: linear-gradient(135deg, rgba(0, 131, 123, 0.08), rgba(0, 100, 92, 0.14));
-    min-height: calc(100vh - 156px);
-    padding: 4rem 0;
-    display: flex;
-    align-items: center;
+    min-height: calc(100vh - 110px);
+    padding: 3rem 0;
 }
 
 .login-hero-content {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
     gap: 2.5rem;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .login-copy {
@@ -228,6 +224,22 @@
 
     .role-section,
     .login-hero {
-        padding: 3rem 0;
+        padding: 2rem 0;
     }
+}
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-right: 3rem;
+}
+
+.password-wrapper i {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    cursor: pointer;
 }

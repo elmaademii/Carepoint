@@ -1,6 +1,7 @@
-<?php
+﻿<?php
 require_once __DIR__ . '/auth.php';
 $currentPage = basename($_SERVER["PHP_SELF"]);
+$user = currentUser();
 ?>
 
 <div class="top-bar">
@@ -22,7 +23,6 @@ $currentPage = basename($_SERVER["PHP_SELF"]);
         <div class="logo">CarePoint</div>
 
         <nav class="main-nav">
-
             <a href="../Ballina/ballina.php"
                class="<?php echo $currentPage === 'ballina.php' ? 'active' : ''; ?>">
                Ballina
@@ -48,15 +48,25 @@ $currentPage = basename($_SERVER["PHP_SELF"]);
                Kontakt
             </a>
 
-            <?php if (isLoggedIn()): ?>
-                <a href="../Login-Logout/logout.php">Shkyçu</a>
-            <?php else: ?>
-                <a href="../Login-Logout/login.php"
+            <?php if (!isLoggedIn()): ?>
+                <a href="/Carepoint/Login-Logout/login.php"
                    class="<?php echo $currentPage === 'login.php' ? 'active' : ''; ?>">
                    Kyçu
                 </a>
+            <?php elseif ($user && $user['role'] === 'admin'): ?>
+                <a href="../Dashboard/dashboard.php"
+                   class="<?php echo $currentPage === 'dashboard.php' ? 'active' : ''; ?>">
+                   Llogaria
+                </a>
+            <?php elseif ($user && $user['role'] === 'patient'): ?>
+                <a href="../Dashboard/patient.php"
+                   class="<?php echo $currentPage === 'patient.php' ? 'active' : ''; ?>">
+                   Llogaria
+                </a>
+            <?php else: ?>
+                <a href="../Login-Logout/logout.php">Shkyçu</a>
             <?php endif; ?>
-
         </nav>
     </div>
 </header>
+
