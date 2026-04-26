@@ -1,0 +1,275 @@
+/* ============================================================
+   te_drejtat_tuaja.css — CarePoint
+   Stilet për faqen "Të Drejtat Tuaja"
+   Ngjyrat nga style.css: --primary:#00837b  --primary-dark:#00645c
+============================================================ */
+
+/* ===== HERO ===== */
+.td-hero {
+    padding: 2.5rem 0 2rem;
+}
+.td-hero h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+.td-hero p {
+    max-width: 600px;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* ===== MAIN WRAPPER ===== */
+.td-main {
+    padding: 2rem 0 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* ===== ALERT ===== */
+.td-alert {
+    padding: 14px 20px;
+    font-size: 0.92rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-left: 4px solid;
+}
+.td-alert--success {
+    background: #eaf6ee;
+    border-color: #27ae60;
+    color: #1a6e38;
+}
+.td-alert--info {
+    background: #e6f4f3;
+    border-color: var(--primary);
+    color: var(--primary-dark);
+}
+
+/* ===== SEKSIONET ===== */
+.td-section {
+    background: #ffffff;
+    border: 1px solid #e0e3ea;
+    padding: 30px 34px;
+}
+
+.td-section-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.td-desc {
+    font-size: 0.88rem;
+    color: #666;
+    margin-bottom: 18px;
+    line-height: 1.6;
+}
+
+/* ===== GRILA E TË DREJTAVE ===== */
+.td-rights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+}
+
+.td-card {
+    border: 1px solid #e0e3ea;
+    padding: 20px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.td-card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 3px 12px rgba(0,131,123,0.10);
+}
+
+.td-card-icon {
+    width: 38px;
+    height: 38px;
+    background: var(--primary);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    margin-bottom: 12px;
+}
+
+.td-card h3 {
+    font-size: 0.93rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 7px;
+}
+
+.td-card p {
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.55;
+}
+
+/* ===== TABELA E COOKIES ===== */
+.td-table-wrap {
+    overflow-x: auto;
+    margin-bottom: 18px;
+}
+
+.td-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.87rem;
+    min-width: 560px;
+}
+
+.td-table th {
+    background: var(--primary-dark);
+    color: #fff;
+    text-align: left;
+    padding: 10px 14px;
+    font-size: 0.83rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+}
+
+.td-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+    vertical-align: middle;
+}
+
+.td-table tr:last-child td { border-bottom: none; }
+.td-table tr:nth-child(even) td { background: #f7f9f9; }
+
+.td-table code {
+    font-size: 0.82rem;
+    background: #e8f4f3;
+    color: var(--primary-dark);
+    padding: 2px 6px;
+    border-radius: 2px;
+    font-family: 'Courier New', monospace;
+}
+
+.td-val {
+    font-family: 'Courier New', monospace;
+    font-size: 0.82rem;
+    background: #e8f4f3;
+    color: var(--primary-dark);
+    padding: 2px 7px;
+}
+
+.td-empty {
+    color: #bbb;
+    font-style: italic;
+    font-size: 0.83rem;
+}
+
+/* Butoni fshij i vogël brenda tabelës */
+.td-btn-del {
+    background: none;
+    border: 1px solid #c0392b;
+    color: #c0392b;
+    font-size: 0.78rem;
+    padding: 4px 10px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+    transition: background 0.15s, color 0.15s;
+}
+.td-btn-del:hover {
+    background: #c0392b;
+    color: #fff;
+}
+
+/* ===== RRESHT I BUTONAVE ===== */
+.td-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* Butonat kryesorë — stilizuar si projekti */
+.btn-carepoint {
+    padding: 11px 22px;
+    font-size: 0.93rem;
+    font-weight: 600;
+    font-family: system-ui, sans-serif;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    transition: opacity 0.15s, background 0.15s;
+}
+.btn-carepoint:hover { opacity: 0.86; }
+
+.btn-primary   { background: var(--primary);      color: #fff; }
+.btn-danger    { background: #c0392b;              color: #fff; }
+.btn-secondary { background: #e8e8e8; color: #222; border: 1px solid #ccc; }
+
+/* ===== KONTAKT GRID ===== */
+.td-contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+    margin-bottom: 4px;
+}
+
+.td-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    border: 1px solid #e0e3ea;
+    padding: 16px;
+}
+
+.td-contact-item i {
+    color: var(--primary);
+    font-size: 1.15rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.td-contact-item div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.td-contact-item strong {
+    font-size: 0.82rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+}
+
+.td-contact-item span {
+    font-size: 0.9rem;
+    color: #222;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 640px) {
+    .td-section { padding: 22px 18px; }
+    .td-rights-grid { grid-template-columns: 1fr; }
+    .td-contact-grid { grid-template-columns: 1fr; }
+    .td-hero h1 { font-size: 1.5rem; }
+}

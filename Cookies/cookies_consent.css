@@ -1,0 +1,140 @@
+/* =====================================================
+       COOKIE OVERLAY — mbulon faqen me overlay te erret
+    ===================================================== */
+    body { background: #f6f7f9; }
+
+    .cookie-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.50);
+        z-index: 9990;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+    /* =====================================================
+       COOKIE PANEL 
+    ===================================================== */
+    .cookie-panel {
+        background: #ffffff;
+        width: 100%;
+        max-width: 700px;
+        padding: 34px 40px 30px;
+        box-shadow: 0 -6px 30px rgba(0,0,0,0.12);
+        border-top: 1px solid #ddd;
+        z-index: 9999;
+    }
+
+    /* LOGO — qendrore, si te foto */
+    .cp-logo {
+        text-align: center;
+        margin-bottom: 24px;
+    }
+
+    .cp-logo-text {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--primary-dark);  
+        letter-spacing: -0.5px;
+        font-family: system-ui, sans-serif;
+    }
+
+    .cp-logo-dot {
+        color: var(--primary);        
+    }
+
+    /* TEKSTI KRYESOR */
+    .cp-text {
+        font-size: 0.92rem;
+        line-height: 1.65;
+        color: #333;
+        text-align: justify;
+        margin-bottom: 16px;
+    }
+
+    .cp-text a {
+        color: var(--primary-dark);
+        text-decoration: underline;
+    }
+    .cp-text a:hover { color: var(--primary); }
+
+    /* QELLIMET */
+    .cp-purposes-title {
+        font-size: 0.92rem;
+        font-weight: 700;
+        color: #222;
+        margin-bottom: 6px;
+    }
+
+    .cp-purposes-desc {
+        font-size: 0.87rem;
+        color: #555;
+        line-height: 1.5;
+        text-align: justify;
+        margin-bottom: 24px;
+    }
+
+    /* BUTONAT */
+    .cp-buttons {
+        display: flex;
+        gap: 10px;
+    }
+
+    .cp-btn {
+        flex: 1;
+        padding: 13px 8px;
+        font-size: 0.96rem;
+        font-weight: 600;
+        font-family: system-ui, sans-serif;
+        cursor: pointer;
+        border: none;
+        transition: opacity 0.15s, background 0.15s;
+    }
+    .cp-btn:hover { opacity: 0.87; }
+
+    /* Butoni 1 — i qelet, tekst i erret  */
+    .cp-btn-drejtat {
+        background: #e8e8e8;
+        color: #222;
+        border: 1px solid #c8c8c8;
+    }
+
+    /* Butoni 2 — i erret */
+    .cp-btn-refuzoj {
+        background: var(--primary-dark);
+        color: #fff;
+    }
+
+    /* Butoni 3 — i gjelber i projektit (si "Agree") */
+    .cp-btn-pranoj {
+        background: var(--primary);        
+        color: #fff;
+    }
+
+    /* LINKU TE DREJTAT TUAJA — mbi butonat */
+    .cp-rights-link {
+        font-size: 0.78rem;
+        text-align: right;
+        margin-bottom: 6px;
+    }
+    .cp-rights-link a {
+        color: #888;
+        text-decoration: underline;
+    }
+    .cp-rights-link a:hover { color: var(--primary-dark); }
+
+    /* MESAZHI PAS ZGJEDHJES (faqe testimi) */
+    .status-box {
+        max-width: 700px;
+        margin: 80px auto;
+        background: #fff;
+        border: 1px solid #dde;
+        padding: 30px 36px;
+        font-size: 0.93rem;
+        line-height: 1.7;
+    }
+    .status-box h2 { color: var(--primary-dark); margin-bottom: 12px; font-size: 1.1rem; }
+    .tag-ok  { color: #1a7a3c; font-weight: 700; }
+    .tag-no  { color: #c0392b; font-weight: 700; }
+    .reset-a { font-size:0.85rem; color: var(--primary); display:inline-block; margin-top:14px; }

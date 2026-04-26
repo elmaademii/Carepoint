@@ -105,26 +105,7 @@ require __DIR__ . '/../includes/navbar.php';
     </section>
 </main>
 
-<!-- COOKIE BANNER -->
-<div id="cookie-banner" class="cookie-banner" hidden>
-    <div class="cookie-banner__content">
-        <p class="cookie-banner__text">
-            CarePoint përdor cookies për të përmirësuar funksionalitetin e faqes dhe për të analizuar përdorimin e saj.
-            Duke klikuar “Prano”, ju pajtoheni me përdorimin e cookies.
-        </p>
-
-        <div class="cookie-banner__actions">
-            <button id="cookie-accept" class="cookie-btn cookie-btn--primary" type="button">
-                Prano
-            </button>
-            <button id="cookie-dismiss" class="cookie-btn cookie-btn--secondary" type="button">
-                Refuzo
-            </button>
-        </div>
-    </div>
-</div>
 
 <script src="script.js"></script>
-<script src="../cookies.js"></script>
 
 <?php require __DIR__ . '/../includes/footer.php'; ?>
