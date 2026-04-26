@@ -1,87 +1,198 @@
-# CarePoint
+# CarePoint – Web 2
 
-CarePoint është një ueb-faqe për një institucion shëndetësor (spital), e zhvilluar si projekt akademik në lëndën Web 1. Projekti paraqet informacion institucional, shërbime mjekësore dhe staf profesional përmes një ndërfaqeje të strukturuar dhe dizajni modern, me fokus në përdorshmëri dhe qartësi për përdoruesin.
-
----
-
-## Qëllimi i Projektit
-
-Qëllimi i këtij projekti është zhvillimi i aftësive praktike në programimin e faqeve web nga ana e klientit (frontend), përmes ndërtimit të një ueb-faqeje funksionale për një institucion shëndetësor.
-
-Projekti synon të demonstrojë njohuritë në përdorimin e teknologjive HTML, CSS dhe JavaScript, si dhe aftësinë për të implementuar funksionalitete tipike të një ueb-faqeje institucionale, përfshirë prezantimin e shërbimeve mjekësore, stafit profesional dhe informacioneve për përdoruesit.
-
-Gjithashtu, projekti synon të zhvillojë aftësinë për menaxhimin e një projekti softuerik përmes GitHub, duke zbatuar praktikat më të mira të zhvillimit të software-it, si puna në grup, përdorimi i degëve (branches), commits dhe pull requests.
+CarePoint është një projekt grupor akademik në lëndën **Web 2**, i ndërtuar mbi projektin ekzistues të **Web 1 (frontend)**.
+Ky version përfshin implementimin e backend-it në PHP sipas kërkesave: strukturë reale aplikacioni, autentikim me role, OOP, validim server-side, sessions dhe cookies.
 
 ---
 
-## Përshkrimi i Projektit
+## Project Overview
 
-Ueb-faqja CarePoint përfshin disa faqe kryesore, si:
-- Ballina
-- Rreth CarePoint
-- Shërbimet mjekësore
-- Stafi mjekësor
-- Kontakti
+CarePoint është një web aplikacion për një institucion shëndetësor që ofron:
 
-Fokusi kryesor i projektit është organizimi i përmbajtjes, navigimi i qartë dhe dizajni responsiv, i cili përshtatet për pajisje të ndryshme si desktop, tablet dhe telefon mobil.
-
-Faqja “Stafi Mjekësor” paraqet stafin përmes kartave interaktive, të cilat janë të klikueshme dhe e drejtojnë përdoruesin në faqet individuale të mjekëve. Faqet individuale të mjekëve kanë strukturë dhe funksionalitet të njëjtë për të gjithë mjekët, ndërsa përmbajtja ndryshon sipas të dhënave përkatëse të secilit mjek.
-
-Projekti është realizuar kryesisht si ueb-faqe statike duke përdorur HTML, CSS dhe JavaScript. Për qëllime shtesë demonstrimi, ekziston edhe një version alternativ i projektit i implementuar në React.
+* Autentikim me role (`admin`, `patient`) pa databazë (hardcoded users)
+* Panel të mbrojtur për admin
+* Validim server-side të formës së kontaktit (Regex)
+* Personalizim me cookies (consent + preferences)
+* Organizim modular me `includes`, `classes`, `actions`
 
 ---
 
-## Teknologjitë e Përdorura
+## Tech Stack
 
-- HTML5  
-- CSS3  
-- JavaScript  
-- React (version alternativ i projektit)  
-- GitHub (menaxhimi i projektit dhe bashkëpunimi)
-
----
-
-## Anëtarët e Grupit dhe Rolet
-
-Projekti është realizuar në formë grupore, ku secili anëtar ka kontribuar në zhvillimin e një faqeje specifike të ueb-aplikacionit duke përdorur HTML, CSS dhe JavaScript.
-
-- Elma Ademi – Zhvillimi i faqes Ballina (HTML, CSS, JavaScript)  
-- Elisa Hadergjonaj – Zhvillimi i faqes Rreth CarePoint (HTML, CSS, JavaScript)  
-- Diona Gerxhaliu – Zhvillimi i faqes Shërbimet (HTML, CSS, JavaScript)  
-- Blediona Aliu – Zhvillimi i faqes Stafi mjekësor (HTML, CSS, JavaScript)  
-- Elsa Shaqiri – Zhvillimi i faqes Kontakti (HTML, CSS, JavaScript)  
-
-Elma Ademi ka pasur gjithashtu rolin e administratorit të repository-t në GitHub, duke menaxhuar bashkëpunimin në grup, pull requests dhe GitHub Projects.
+* PHP
+* HTML5
+* CSS3
+* JavaScript
+* XAMPP (Apache)
+* Git & GitHub
 
 ---
 
-## Menaxhimi i Projektit (GitHub Projects)
+## Main Features
 
-Për organizimin dhe ndjekjen e progresit të projektit është përdorur GitHub Projects (Kanban board). Detyrat janë ndarë në kolona përkatëse (p.sh. To Do, In Progress, Review, Done), duke mundësuar planifikim të qartë dhe bashkëpunim efektiv mes anëtarëve të grupit.
+* Faqe funksionale:
+
+  * Ballina
+  * Rreth CarePoint
+  * Shërbimet
+  * Stafi
+  * Kontakt
+  * Login / Logout
+  * Dashboard (vetëm për admin)
+  * Cookies (consent, preferences, user rights)
+
+* OOP (Object-Oriented Programming):
+
+  * `User`
+  * `Doctor extends User`
+
+* Funksionalitete:
+
+  * Sortim dinamik i stafit (`usort`)
+  * Validim server-side me Regex
+  * Session-based authentication
+  * Cookie consent & preferences
 
 ---
 
-## Ekzekutimi i Projektit
+## Project Structure
 
-### Versioni HTML / CSS / JavaScript
-- Hapni skedarin `ballina.html` në një shfletues uebi  
-- Ose përdorni Live Server në Visual Studio Code  
+```
+Carepoint/
+│
+├── actions/
+│   └── validate_contact.php
+│
+├── Ballina/
+│   ├── ballina.php
+│   └── ballina.css
+│
+├── classes/
+│   ├── User.php
+│   └── Doctor.php
+│
+├── Cookies/
+│   ├── cookies_consent.php
+│   ├── preferences.php
+│   └── te_drejtat_tuaya.php
+│
+├── Dashboard/
+│   └── dashboard.php
+│
+├── includes/
+│   ├── auth.php
+│   ├── header.php
+│   ├── navbar.php
+│   └── footer.php
+│
+├── Kontakt/
+├── Login-Logout/
+├── Rreth-CarePoint/
+├── Sherbimet/
+├── Stafi/
+├── img/
+├── style.css
+└── README.md
+```
 
-### Versioni React
-1. Hyni në dosjen `carepoint-react`  
-2. Instaloni libraritë:
-   ```bash
-   npm install
-3. Nisni serverin e zhvillimit:
-   ```bash
-   npm run dev
-4. Hapeni në shfletues duke shkuar në:
-   http://localhost:5173
+---
 
-## Qëllimi Akademik
+## Requirements
 
-Ky projekt është realizuar ekskluzivisht për qëllime mësimore në kuadër të lëndës Web 1. Projekti synon të demonstrojë aftësitë praktike të studentëve në zhvillimin e faqeve web nga ana e klientit (frontend), duke përdorur teknologjitë HTML, CSS dhe JavaScript, si dhe parimet bazë të organizimit dhe menaxhimit të një projekti softuerik.
+* XAMPP (Apache i aktivizuar)
+* Browser modern (Chrome, Edge, Firefox)
+* Git (opsionale)
 
-Përmes këtij projekti janë përmbushur kërkesat akademike të lëndës, si në aspektin teknik (implementimi i funksionaliteteve dhe dizajni responsiv), ashtu edhe në aspektin organizativ, përmes punës në grup, përdorimit të GitHub, degëve (branches), commits dhe pull requests.
+---
 
-Ky projekt është i licencuar sipas licencës MIT. Shih skedarin LICENSE për detaje.
+## Setup & Run (XAMPP)
+
+### 1. Vendos projektin në `htdocs`
+
+```bash
+cd C:\xampp\htdocs
+git clone https://github.com/elmaademii/Carepoint.git
+```
+
+ose manualisht:
+
+```
+C:\xampp\htdocs\Carepoint
+```
+
+---
+
+### 2. Starto Apache
+
+* Hap XAMPP Control Panel
+* Kliko **Start** te Apache
+
+---
+
+### 3. Hape në browser
+
+```
+http://localhost/Carepoint/Ballina/ballina.php
+```
+
+ose nëse përdor port 8080:
+
+```
+http://localhost:8080/Carepoint/Ballina/ballina.php
+```
+
+---
+
+## Alternative: PHP Built-in Server
+
+```bash
+cd C:\path\to\Carepoint
+php -S localhost:8000
+```
+
+Pastaj:
+
+```
+http://localhost:8000/Ballina/ballina.php
+```
+
+---
+
+## Useful Routes
+
+* Ballina → `/Ballina/ballina.php`
+* Login → `/Login-Logout/login.php`
+* Dashboard → `/Dashboard/dashboard.php`
+* Kontakt → `/Kontakt/kontakt.php`
+* Cookies → `/Cookies/`
+
+---
+
+## Demo Login Credentials
+
+**Admin**
+
+* Username: `admin.carepoint`
+* Password: `AdminCare2026`
+
+**Patient**
+
+* Username: `patient.demo`
+* Password: `PatientCare2026`
+
+---
+
+## Work Distribution
+
+* **Elma Ademi** – Struktura dhe organizimi i projektit
+* **Elisa Hadergjonaj** – Login, sessions, role management
+* **Elsa Shaqiri** – Cookies dhe personalizimi
+* **Blediona Aliu** – OOP (User, Doctor)
+* **Diona Gerxhaliu** – Validim Regex & arrays
+
+---
+
+## License
+
+MIT License
+
