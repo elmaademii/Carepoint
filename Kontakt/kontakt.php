@@ -1,5 +1,5 @@
 <?php 
-$page_css = "kontakt.css";
+$page_css = "kontakt.css?v=2";
 require __DIR__ . '/../includes/header.php';
 ?>
 <?php require __DIR__ . '/../includes/navbar.php'; ?>
@@ -64,7 +64,7 @@ require __DIR__ . '/../includes/header.php';
       }
 
       if (isset($_GET['error'])) {
-          echo "<div class='alert error'>" . $_GET['error'] . "</div>";
+        echo "<div class='alert error'>" . htmlspecialchars($_GET['error']) . "</div>";
       }
       ?>
 
@@ -74,7 +74,7 @@ require __DIR__ . '/../includes/header.php';
       </div>
 
       <!-- FORM  -->
-      <form method="POST" action="actions/validate_contact.php" class="cp-form">
+      <form method="POST" action="../actions/validate_contact.php" class="cp-form">
 
         <div class="cp-row">
           <div class="cp-field">

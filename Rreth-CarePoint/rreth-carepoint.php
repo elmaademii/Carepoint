@@ -1,5 +1,5 @@
 <?php 
-$page_css = "rreth-carepoint.css?v=2";
+$page_css = "rreth-carepoint.css?v=3";
 require __DIR__ . '/../includes/header.php'; 
 require __DIR__ . '/../includes/navbar.php';
 ?>
